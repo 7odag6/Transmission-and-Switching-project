@@ -106,7 +106,7 @@ def calculate_cells360(tdmuser,tdmchannel,blpr,CI,city_size, population_density,
     
     a_user =(avg_calls_per_user*avg_call_duration)/(24*60)
     a_cell=float(erlang[blpr][channels_per_cell])
-    subs_per_cell=a_cell/a_user
+    subs_per_cell=math.floor(a_cell/a_user)
     cells_required=math.ceil(total_users/subs_per_cell)
     
     return cells_required
@@ -153,7 +153,7 @@ def calculate_cells120(tdmuser,tdmchannel,blpr,CI,city_size, population_density,
     
     a_user =(avg_calls_per_user*avg_call_duration)/(24*60)
     a_sector=float(erlang[blpr][channels_per_sector])
-    subs_per_cell=(a_sector*3)/a_user
+    subs_per_cell=math.floor((a_sector*3)/a_user)
     cells_required=math.ceil(total_users/subs_per_cell)
     
     return cells_required
@@ -180,7 +180,7 @@ def calculate_cells10(tdmuser,tdmchannel,blpr,CI,city_size, population_density, 
     
     a_user =(avg_calls_per_user*avg_call_duration)/(24*60)
     a_sector=float(erlang[blpr][channels_per_sector])
-    subs_per_cell=(a_sector*36)/a_user
+    subs_per_cell=math.floor((a_sector*36)/a_user)
     cells_required=math.ceil(total_users/subs_per_cell)
     
     return cells_required
@@ -224,7 +224,7 @@ def calculate_cells180(tdmuser,tdmchannel,blpr,CI,city_size, population_density,
     
     a_user =(avg_calls_per_user*avg_call_duration)/(24*60)
     a_sector=float(erlang[blpr][channels_per_sector])
-    subs_per_cell=(a_sector*2)/a_user
+    subs_per_cell=math.floor((a_sector*2)/a_user)
     cells_required=math.ceil(total_users/subs_per_cell)
     
     return cells_required
